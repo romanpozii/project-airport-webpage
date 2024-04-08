@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/buyticket.css">
+    <script src="JS/walidacja.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .error {
+            color: red;
+            visibility: hidden;
+        }
+    </style>
+    <title>Airport</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="block block1">
+            <div class="wrapblock1">
+                <div class="logo"> 
+                    <h2><a href="index.html">AirportDN</a></h2>
+                </div>
+                <div class="menu"> 
+                    <a href="departing.html" class="linkbl1">Departing</a>
+                    <a href="arriving.html" class="linkbl1">Arriving</a>                   
+                    <a href="howtoget.html" class="linkbl1">How to Get</a>
+                    <a href="buyticket.html" class="linkbl1">Buy a ticket</a>
+                </div>
+                <div class="lang"> 
+                    <p>EN</p>                                 
+                </div>
+            </div> 
+        </div> 
+        <div class="block block2">
+            <div class="wrapblock2">
+                <div class ="boxblock2">
+                    <div class="main_title">
+                        <h1>Buy a ticket</h1>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="block block3">
+            <div class="wrapblock3">
+                <div class="bl3title">
+                    <h2>Fill out this form to buy a ticket:</h2>
+                </div>
+                <form action="mailto:s97829@pollub.edu.pl" id="form" method="post" onsubmit="return check()">
+                    <table>
+                        <tr>
+                            <td>First name:</td>
+                            <td><input type="text" id="firstname" name="firstname" required placeholder="Name" size="30"></td>
+                            <td id="firstname_error" class="error">Enter name correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>Last name:</td>
+                            <td><input type="text" id="lastname" name="lastname" required placeholder="Surname" size="30"></td>
+                            <td id="lastname_error" class="error">Enter last name correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>
+                                <input type="email" name="email" id="email" required placeholder="qwert123@mail.com">
+                            </td>
+                            <td id="email_error" class="error">Enter email correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>Phone number:</td>
+                            <td><input type="tel" name="tel" id="tel" required placeholder="XXXXXXXXX"></td>
+                            <td id="tel_error" class="error">Enter phone number correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>Date:</td>
+                            <td>
+                                <input type="date" id="date" name="date" required>
+                            </td>
+                            <td id="date_error" class="error">Pick a date!</td>
+                        </tr>
+                        <tr>
+                            <td>From:</td>
+                            <td>
+                                <select name="from" id="from" required size="2">
+                                    <option value="kyiv1">Kyiv 1</option>
+                                    <option value="kyiv2">Kyiv 2</option>
+                                </select>
+                            </td>
+                            <td id="from_error" class="error">Pick a departure location correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>To:</td>
+                            <td>
+                                <select name="to" id="to" required size="4">
+                                    <option value="warsaw">Warsaw</option>
+                                    <option value="lviv">Lviv</option>
+                                    <option value="paris">Paris</option>
+                                    <option value="madrid">Madrid</option>
+                                </select>
+                            </td>
+                            <td id="to_error" class="error">Pick your destination correctly!</td>
+                        </tr>
+                        <tr>
+                            <td>Travel class:</td>
+                            <td>
+                                <select name="class" id="class" required size="3">
+                                    <option value="economy">Economy class</option>
+                                    <option value="first">First class</option>
+                                    <option value="business">Business class</option>
+                                </select>
+                            </td>
+                            <td id="class_error" class="error">Choose your travel class!</td>
+                        </tr>
+                    </table>
+                    <h4>Payment method:</h4>
+                    <p>
+                        <input type="radio" name="payment" checked="checked" value="euro" id="mastercard">
+                        <label for="mastercard"><i class="fab fa-cc-mastercard"></i> Mastercard</label>
+                        <input type="radio" name="payment" value="visa" id="visa">
+                        <label for="mastercard"><i class="fab fa-cc-visa"></i> Visa</label>
+                        <input type="radio" name="payment" value="paypal" id="paypal">
+                        <label for="mastercard"><i class="fab fa-cc-paypal"></i> PayPal</label>
+                        <span id="payment_error" class="error">Choose payment method!</span>
+                        <p>
+                            <input type="submit" value="Submit"/>
+                            <input type="reset" value="Reset"/>
+                            <input type="button" value="Clean session storage" onclick="clean_data()">
+                        </p>
+                    </p>
+                </form>
+            </div>
+        </div>
+        <div class="block block5">
+            <div class="footer"></div>
+        </div>
+    </div>
+</body>
+</html>
